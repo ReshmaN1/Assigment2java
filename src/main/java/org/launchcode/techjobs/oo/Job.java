@@ -4,6 +4,8 @@ import java.util.Objects;
 
 public class Job {
 
+    public Object Job;
+    public String toString;
     private int id;
     private static int nextId = 1;
 
@@ -14,8 +16,7 @@ public class Job {
     private CoreCompetency coreCompetency;
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
-        id = nextId;
-        nextId++;
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
@@ -23,25 +24,22 @@ public class Job {
         this.coreCompetency=coreCompetency;
     }
     public Job(){
-
+        id = nextId;
+        nextId++;
     }
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fieds. The second constructor should also call the first in order to initialize
     //  the 'id' field.
 
-    public void Job(){
-        id = nextId;
-        nextId++;
-    }
 
-    public void Job(String name, Employer employer , Location location , PositionType positionType , CoreCompetency coreCompetency){
+    /*public void Job(String name, Employer employer , Location location , PositionType positionType , CoreCompetency coreCompetency){
         this.name = name;
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
         this. coreCompetency = coreCompetency;
-    }
+    }*/
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
@@ -54,6 +52,15 @@ public class Job {
         return id == job.id;
     }
 */
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Job job = (Job) o;
+        return id == job.id;
+    }
+
     @Override
     public int hashCode(){
         return Objects.hash(id);
