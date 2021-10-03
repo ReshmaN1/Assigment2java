@@ -6,27 +6,28 @@ import org.launchcode.techjobs.oo.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 /**
  * Created by LaunchCode
  */
 
 public class JobTest {
-  private Job firstJob ,SecondJob, thirdJob , fourthJob,fifthJob;
+  private Job firstJob ,secondJob, thirdJob , fourthJob,fifthJob;
 
   @Before
     public void creatTestJobObjects(){
-      firstJob = new Job();
-      secondJob = new Job();
-      thirdJob = new Job("prodect tester" , new Employer("ACNE"), new Location("Desert"), new PositionType("Quality Control"),new CoreCompetency("Persistence"));
+    firstJob = new Job("first tester" , new Employer("ACNE"),new Location("Desert"), new PositionType("Quality Control"),new CoreCompetency("Persistence"));
+    secondJob = new Job("second tester" , new Employer("ACNE"),new Location("Desert"), new PositionType("Quality Control"),new CoreCompetency("Persistence"));
+      thirdJob = new Job("prodect tester" , new Employer("ACNE"),new Location("Desert"), new PositionType("Quality Control"),new CoreCompetency("Persistence"));
       fourthJob = new Job("", new Employer("ACNE"), new Location("Desert"), new PositionType("Quality Control"),new CoreCompetency("Persistence"));
       fifthJob = new Job("", new Employer(""),new Location(""), new PositionType(""), new CoreCompetency(""));
   }
 
   @Test
-    public void testSettingJobID{
+    public void testSettingJobId (){
       //Test that the ID values for the two objects are NOT the same and differ by 1
-        assertEquals(1, secondJob.getId() - firstJob.getId());
+    assertEquals(1, secondJob.getId() - firstJob.getId());
     }
 
     @Test
@@ -39,7 +40,7 @@ public class JobTest {
     }
     @Test
     public void testJobsForEquality (){
-      assertFalse(firstJob.equals(secondJob));
+      assertFalse(firstJob == secondJob);
     }
 
     //Test Driven Development (TDD) : write tests to satisfy requirments of our future toString method
@@ -49,7 +50,7 @@ public class JobTest {
       //Get first charcater of string
         char firstCharacter = thirdJob.toString().charAt(0);
         // Get last character
-        char lastCharacetr = thirdJob.toString().charAt(thirdJob.toString().lenght()-1);
+        char lastCharacetr = thirdJob.toString().charAt(thirdJob.toString().length() - 1);
         assertTrue(firstCharacter==lastCharacetr);
   }
     //TODO 2.  The string should contain a label for each feils, follwed by the data stored in that field.

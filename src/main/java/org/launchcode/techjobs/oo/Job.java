@@ -13,6 +13,12 @@ public class Job {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
 
+    public Job(String prodect_tester, Employer acne, Location desert, PositionType quality_control, CoreCompetency persistence) {
+    }
+    public Job(){
+
+    }
+
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fieds. The second constructor should also call the first in order to initialize
     //  the 'id' field.
