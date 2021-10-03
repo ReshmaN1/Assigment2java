@@ -34,20 +34,24 @@ public class Location {
 
     @Override
     public int hashCode() {
+
         return Objects.hash(getId());
     }
 
     // Getters and Setters:
 
     public int getId() {
+
         return id;
     }
 
     public String getValue() {
+
         return value;
     }
 
     public void setValue(String value) {
+
         this.value = value;
     }
 

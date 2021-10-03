@@ -9,20 +9,18 @@ public class Employer {
     private String value;
 
     public Employer() {
-        id = nextId;
-        nextId++;
     }
 
     public Employer(String value) {
         this();
-        this.value = value;
     }
 
     // Custom toString, equals, and hashCode methods:
 
     @Override
-    public String toString() {
-        return value;
+    public String toString(){
+
+        return null;
     }
 
     @Override
@@ -41,14 +39,17 @@ public class Employer {
     // Getters and Setters:
 
     public int getId() {
+
         return id;
     }
 
     public String getValue() {
+
         return value;
     }
 
     public void setValue(String value) {
+
         this.value = value;
     }
 
