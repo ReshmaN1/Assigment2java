@@ -1,4 +1,4 @@
-package org.launchcode.techjobs.oo;
+package org.launchcode.techjobs.oo.test;
 
 import org.junit.Before;
 import org.junit.Test;
