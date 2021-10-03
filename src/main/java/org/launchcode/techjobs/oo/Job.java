@@ -13,7 +13,14 @@ public class Job {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
 
-    public Job(String prodect_tester, Employer acne, Location desert, PositionType quality_control, CoreCompetency persistence) {
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+        id = nextId;
+        nextId++;
+        this.name = name;
+        this.employer = employer;
+        this.location = location;
+        this.positionType = positionType;
+        this.coreCompetency=coreCompetency;
     }
     public Job(){
 
@@ -56,7 +63,7 @@ public class Job {
     //  and id.
 
     public String getName(){
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {

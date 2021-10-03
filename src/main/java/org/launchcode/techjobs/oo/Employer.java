@@ -12,7 +12,7 @@ public class Employer {
     }
 
     public Employer(String value) {
-        this();
+        this.value = value;
     }
 
     // Custom toString, equals, and hashCode methods:
@@ -20,7 +20,7 @@ public class Employer {
     @Override
     public String toString(){
 
-        return null;
+        return this.getValue();
     }
 
     @Override

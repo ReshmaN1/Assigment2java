@@ -16,7 +16,6 @@ public class PositionType {
     }
 
     public PositionType(String value) {
-        this();
         this.value = value;
     }
 

@@ -8,9 +8,10 @@ public class Location {
     private static int nextId = 1;
     private String value;
 
-    public Location(String desert) {
+    public Location(String value) {
         id = nextId;
         nextId++;
+        this.value = value;
     }
 
     // TODO: Add a constructor that takes a string as a parameter and assigns it to the 'value' field. The

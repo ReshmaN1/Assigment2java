@@ -16,7 +16,6 @@ public class CoreCompetency {
     }
 
     public CoreCompetency(String value) {
-        this();
         this.value = value;
     }
 
