@@ -4,13 +4,15 @@ import org.junit.Before;
 import org.junit.Test;
 import org.launchcode.techjobs.oo.*;
 
+import java.lang.reflect.InvocationTargetException;
+
 import static org.junit.Assert.*;
 
 /**
  * Created by LaunchCode
  */
 
-public class JobTest {
+public class JobTest{
     private Job firstJob, secondJob, thirdJob, fourthJob, fifthJob;
 
     @Before
@@ -77,6 +79,28 @@ public class JobTest {
     @Test
     public void testToStringOnlyContainsId() {
         assertTrue(fifthJob.toString().contentEquals("Data is not available"));
+    }
+
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        Job job  = new Job("Product tester", new Employer("Sdf"), new Location("Stl"), new PositionType("Java"), new CoreCompetency("Persistence"));
+
+        char firstChar = job.toString().charAt(0);
+        char lastChar = job.toString().charAt(job.toString().length()-1);
+        assertEquals(firstChar, '\n');
+        assertEquals(lastChar, '\n');
+    }
+
+    @Test
+    public void testToStringHandlesEmptyField() throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, NoSuchFieldException {
+        Job job  = new Job("Product tester", new Employer(""), new Location("Stl"), new PositionType(""), new CoreCompetency("Persistence"));
+        assertEquals("Deta ia not available", job.toString());
+    }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, NoSuchFieldException {
+        Job job  = new Job("Product tester", new Employer("LaunchCode"), new Location("Stl"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
+        assertEquals("Product tester", job.getName());
     }
 
 }
