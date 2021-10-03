@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
  * Created by LaunchCode
  */
 @RunWith(JUnit4.class)
-public class JobTest{
+public class JobTest {
     private Job firstJob, secondJob, thirdJob, fourthJob, fifthJob;
 
     @Before
