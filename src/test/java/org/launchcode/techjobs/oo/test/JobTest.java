@@ -29,16 +29,25 @@ public class JobTest{
     @Test
     public void testSettingJobId() {
         //Test that the ID values for the two objects are NOT the same and differ by 1
+        Job job = new Job();
+        Job newJob = new Job();
         assertEquals(1, secondJob.getId() - firstJob.getId());
     }
 
     @Test
     public void testJobConstructorSetsAllFields() {
+        thirdJob = new Job("Product tester", new Employer("ACNE"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
         assertEquals("Product tester", thirdJob.getName());
         assertEquals("ACNE", thirdJob.getEmployer().getValue());
         assertEquals("Desert", thirdJob.getLocation().getValue());
         assertEquals("Quality Control", thirdJob.getPositionType().getValue());
         assertEquals("Persistence", thirdJob.getCoreCompetency().getValue());
+
+        assertTrue( null!=thirdJob.getName());
+        assertTrue( null!=thirdJob.getEmployer().getValue());
+        assertTrue( null!=thirdJob.getLocation().getValue());
+        assertTrue( null!=thirdJob.getPositionType().getValue());
+        assertTrue( null!=thirdJob.getCoreCompetency().getValue());
     }
 
     @Test
