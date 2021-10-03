@@ -111,7 +111,9 @@ public class JobTest{
     @Test
     public void testToStringContainsCorrectLabelsAndData() throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, NoSuchFieldException {
         Job job  = new Job("Product tester", new Employer("LaunchCode"), new Location("Stl"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
+        String jobDetails = job.toString();
         assertEquals("Product tester", job.getName());
+        assertNotNull(jobDetails);
     }
 
 }

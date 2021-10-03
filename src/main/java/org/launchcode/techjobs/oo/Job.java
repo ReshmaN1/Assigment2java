@@ -117,32 +117,32 @@ public class Job {
         String output = "";
 
         if (name == ""){
-            return "Data is not available";
+            name= "Data is not available";
 
         }
 
         if (employer.getValue() == ""){
-            return "Deta ia not available";
+            employer.setValue("Data not available");
         }
 
         if (location.getValue() == ""){
-            return "Deta is not available";
+            location.setValue("Data not available");
         }
 
         if(positionType.getValue() == ""){
-            return "Deta ia not available";
+            positionType.setValue("Data not available");
         }
 
         if(coreCompetency.getValue() ==""){
-            return "Data is not available";
+            coreCompetency.setValue("Data not available");
         }
         output =
-                       "\n" + "ID:" + id + "\n" +
-                        "\n"  + "Name:" + name + "\n" +
-                         "\n"  + "Employer:" + employer + "\n"  +
-                          "\n"  + "Location:" + location + "\n" +
-                           "\n" + "Position Type:" + positionType + "\n" +
-                            "\n" + "Core Competency:" + coreCompetency + "\n";
+                       "\n" + "ID: " + id  +
+                        "\n"  + "Name: " + name +
+                         "\n"  + "Employer: " + employer  +
+                          "\n"  + "Location: " + location +
+                           "\n" + "Position Type: " + positionType+
+                            "\n" + "Core Competency: " + coreCompetency + "\n";
          return output;
 
 
