@@ -88,11 +88,6 @@ public class JobTest {
     // TODO 4. (Bonus) If a job object ONLY contains data for the Id field, the method should return, "OOpS! This job does not seem to exist."
 
     @Test
-    public void testToStringOnlyContainsId() {
-        assertTrue(fifthJob.toString().contentEquals("Data is not available"));
-    }
-
-    @Test
     public void testToStringStartsAndEndsWithNewLine() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         Job job  = new Job("Product tester", new Employer("Sdf"), new Location("Stl"), new PositionType("Java"), new CoreCompetency("Persistence"));
 
@@ -105,7 +100,14 @@ public class JobTest {
     @Test
     public void testToStringHandlesEmptyField() throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, NoSuchFieldException {
         Job job  = new Job("Product tester", new Employer(""), new Location("Stl"), new PositionType(""), new CoreCompetency("Persistence"));
-        assertEquals("Deta ia not available", job.toString());
+
+        String output = String.format("\nID: %d\n"+
+                "Name: %s\n"+
+                "Employer: Data not available\n" +
+                "Location: %s\n"+
+                "Position Type: Data not available\n"+
+                "Core Competency: %s\n", job.getId(), job.getName(), job.getLocation(),job.getCoreCompetency());
+        assertEquals(output, job.toString());
     }
 
     @Test
